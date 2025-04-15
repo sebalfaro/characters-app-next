@@ -28,4 +28,5 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=${FRONTEND_PROD_PORT}
+      - NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
     restart: unless-stopped

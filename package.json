@@ -5,7 +5,7 @@
     "install:frontend": "cd frontend && npm install",
     "dev": "docker-compose up --no-deps frontend-dev",
     "start": "docker-compose up -d frontend",
-    "down": "docker-compose down"
+    "stop": "docker-compose down"
   },
   "devDependencies": {},
   "dependencies": {}

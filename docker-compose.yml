@@ -1,0 +1,31 @@
+services:
+  # Frontend - Desarrollo
+  frontend-dev:
+    build:
+      context: ./frontend-app
+      target: dev
+      dockerfile: Dockerfile
+    container_name: frontend-dev
+    volumes:
+      - ./frontend-app:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - ${FRONTEND_DEV_PORT}:${FRONTEND_DEV_PORT}
+    environment:
+      - NODE_ENV=development
+      - PORT=${FRONTEND_DEV_PORT}
+
+  # Frontend - Producción
+  frontend:
+    build:
+      context: ./frontend-app
+      target: prod
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - ${FRONTEND_PROD_PORT}:${FRONTEND_PROD_PORT}
+    environment:
+      - NODE_ENV=production
+      - PORT=${FRONTEND_PROD_PORT}
+    restart: unless-stopped

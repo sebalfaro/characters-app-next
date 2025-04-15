@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-baseW: #fafafa;
+  --color-neutralLight: #e6e7e3;
+  --color-neutralMedium: #c7cbc2;
+  --color-neutralDark: #808c73;
+  --color-neutralExtraDark: #575b52;
+  --color-dark: #333630;
+  --color-primaryExtraLight: #e7f3d8;
+  --color-primaryLight: #b6da8b;
+  --color-primaryColor: #8bc547;
+  --color-primaryDark: #588028;
+  --color-primaryExtraDark: #354e18;
+}
+
+@layer utilities {
+  .bg-radial-overlay {
+    background: #00000066;
+    background: radial-gradient(at center, #00000066, #000000);
+    background-blend-mode: multiply;
+  }
+}
+
